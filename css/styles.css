@@ -1,0 +1,925 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+*::selection {
+    background: #000000;
+    color: #ffffff;
+ }
+*:focus {
+    outline: 0px;   
+}
+ /* PERSONALIZAR EL SCROLL */
+*::-webkit-scrollbar {
+    appearance: none;
+    height: 8px;
+    width:10px;
+    background-color: rgba(0, 0, 0, 0);
+}
+*:-webkit-scrollbar-button:increment,*::-webkit-scrollbar-button {
+    display: none;
+} 
+*::-webkit-scrollbar-thumb {
+    background-color: rgb(187, 187, 187);
+    border-radius: 20px;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(156, 156, 156);
+}
+*::-webkit-scrollbar-thumb:active {
+    background-color: rgb(129, 129, 129);
+}
+ /* FIN DE PERSONALIZACION */
+ 
+body{
+    font-family: 'Poppins', sans-serif;    
+}
+.contenedor{
+    width: 100%;
+    max-width: 1170px;
+    margin: auto;
+}
+
+/* CABECERA */
+
+header{
+    width: 100%;
+    height: 10vh;
+    font-size: 17px;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    font-family: 'Germania One', cursive;
+    z-index: 100;
+}
+header > .contenedor{
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+}
+.logo{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#logogian{
+    width: min-content;
+    height: min-content;
+    padding: 5px;
+    border: 3px solid #fdfffc;
+    color: #fdfffc;
+    font-family: 'Julius Sans One', sans-serif;
+}
+div.menu{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+    max-width: 500px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+div.menu a{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0px 5px 5px;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    top: 5px;
+}
+div.menu a:hover{
+    color: #ddd;
+    border-bottom: 2px solid white;
+    transition: .5s;
+}
+.cuenta{
+    height: 100%;
+    width: 15%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: center;
+}
+#contactar{
+    padding: 10px 30px;
+    color: #ffffff;
+    font-weight: bold;
+    width: min-content;
+    height: min-content;
+    border-radius: 20px;
+    text-decoration: none;
+    background-color: rgb(153, 102, 102);
+    box-shadow: 0px 5px 1px rgb(119, 79, 79);
+    transition: .5s;
+}
+#contactar:hover{
+    box-shadow: 0px 4px 1px rgb(119, 79, 79);
+    transform: translateY(2px);
+    transition: .5s;
+}
+#contactar:active{
+    box-shadow: 0px 2px 1px rgb(119, 79, 79);
+    transform: translateY(5px);
+    transition: .5s;
+}
+/* Para que al presionar en sobre mi y en servicio solo se muestre esa seccion con el nav, sin mostrar otra sec*/
+#sobremi, #servicio{
+    position: absolute;
+    color: transparent;
+    user-select: none;
+}
+#sobremi{
+    top: 80vh;
+}
+#servicio{
+    top: 270vh;
+}
+/* FIN DE ENCABEZADO */
+
+/* SECCIÓN DE BANNER */
+.banner{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/banner.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.degradadofondo{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0), rgba(156, 85, 75, 0.2));
+}
+.llamada-accion{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+.llamada-accion div{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    align-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 5px grey;
+}
+.llamada-accion div h1{
+    font-size: 38px;
+    text-transform: uppercase;
+    font-family: 'Germania One', cursive;
+    margin-bottom: 20px;
+}
+.llamada-accion div p{
+    font-size: 23px;
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 80px;
+}
+
+/* FIN DE SECCIÓN DE BANNER */
+
+/* SECCION SOBRE MI */
+.sobremi{
+    width: 100%;
+    height: 80vh;
+    color: #333;
+    text-align: center;
+    background-image: url(../img/perfil.jpg);
+    background-position: top right;
+    background-size: cover;
+    display: flex;
+    flex-flow: row wrap;
+}
+.sobremi .informacion{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0px 40px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.sobremi .informacion h2{
+    font-size: 44px;
+    padding: 10px 20px;
+    border-top: 3px solid #333;
+    border-bottom: 3px solid #333;
+}
+.sobremi .informacion h4{
+    font-size: 24px;
+}
+.sobremi .informacion p{
+    font-size: 21px;
+    line-height: 50px;
+    max-width: 600px;
+}
+.sobremi .informacion h3{
+    font-size: 24px;
+    color: #fdfffc;
+    max-width: 400px;
+    background-color: #04161f;
+    padding: 10px 0px;
+}
+.sobremi .perfil{
+    width: 50%;
+    height: 100%;
+}
+
+/* FIN DE SECCION SOBRE MI */
+
+/* SECCION DE GALERIA */
+
+.galeria {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    user-select: none;
+}
+.titulo{
+    width: 17%;
+    height: 100%;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+}
+.titulo h2{
+    font-size: 62px;
+    color: white;
+    text-shadow: 2px 2px 5px grey;
+    width: max-content;
+    transform: rotate(-90deg);
+    font-family: 'Germania One', cursive;
+}
+.fotos1{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+.fotos1 img{
+    width: 20%;
+    height: 25%;
+}
+.fotos1 img.horizontal{
+    width: 40%;
+}
+.fotos2{
+    width: 23%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+}
+.fotos2 img{
+    height: 50%;
+    width: 100%;
+}
+
+/* FIN DE SECCION DE GALERIA */
+
+/* SECCION DE SERVICIOS */
+
+.servicios{
+    height: 90vh;
+    width: 100%;
+    background-image: url(../img/adicional/fondoservicio.jpg);
+    background-size: cover;
+    background-position: top;
+    letter-spacing: 5px;  
+    color: #fdfffc;
+}
+.servicios > .contenedor{
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+}
+.servicios #info{
+    height: min-content;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+#info h2{
+    font-size: 42px;
+    height: min-content;
+    word-spacing: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+}
+.servicios .cajas{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center;
+    width: 100%;
+    height: 70%;
+}
+.cajas .caja{
+    width: 30%;
+    height: 100%;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    align-content: center;
+    background-position: center;
+    background-size: cover;
+}
+.cajas #personal{
+    background-image: url(../img/servicio/personal.jpg);
+}
+.cajas #boda{
+    background-image: url(../img/servicio/boda.jpg);
+}
+.cajas #producto{
+    background-image: url(../img/servicio/products.jpg);
+}
+.caja:hover{
+    transform: translateY(-10px);
+    filter: saturate(1.5);
+    transition: .6s;
+}
+.cajas .caja p{
+    width: min-content;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+}
+
+/* FIN DE SECCION DE SERVICIO */
+
+/* SECCION DE TESTIMONIOS */
+
+section.sectestimonios{
+    height: 60vh;
+    width: 100%;
+    background-image: linear-gradient(#ffffff 0%, #ddd 100%);
+}
+.sectestimonios > .contenedor{
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.sectestimonios .satisfechos{
+    height: min-content;
+    width: 100%;
+    font-size: 25px;
+    color: #333;
+    text-align: center;
+}
+.sectestimonios .testimonios{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+}
+.testimonio{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.testimonio img{
+    width: 80px;
+    border-radius: 40px;
+    border: 0px;
+    margin-bottom: 20px;
+}
+.testimonio > h3{
+    font-size: 16px;
+    color: #8f7860;
+    height: min-content;
+    margin-bottom: 20px;
+}
+.testimonio p{
+    font-size: 15px;
+    color: #7a7a7a;
+    text-align: center;
+}
+ 
+/* FIN DE SECCION DE TESTIMONIOS */
+
+/* PIE DE PAGINA */
+
+footer{
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 15px;
+    line-height: 26px;
+    color: #ddd;
+}
+.center-footer{
+    height: 80%;
+    width: 100%;
+    background-color: #0a1d25;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 20px 20px;
+    border-top: 12px solid #8f7860;
+    box-shadow: -6px -6px 10px gray;
+}
+.center-footer .redes{
+    height: 100%;
+    width: 45%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    border-right: 2px solid whitesmoke;
+}
+.redes #logogian{
+    margin: 0;
+}
+.redes > h3{
+    font-weight: bold;
+}
+.redes a{
+    margin-left: 15px;
+    width: 35px;
+    color: transparent;
+}
+.redes a > svg{
+    width: 35px;
+    user-select: none;
+}
+.redes a > svg:hover{
+    fill: white;
+    stroke: black;
+    stroke-width: .3;
+}
+
+.center-footer > .contacto{
+    height: 100%;
+    width: 55%;
+    display: flex;
+    flex-flow: row wrap;
+}
+.contacto > .contactame{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+}
+.contactame p{
+    text-align: center;
+    font-weight: bold;
+    max-width: 250px;
+}
+.contacto > .animacion{
+    width: 40%;
+    height: 100%;
+}
+.bottom-footer{
+    background-color: #04161f;
+    height: 20%;
+    width: 100%;
+    color: #7a7a7a;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* PAGINA DE CONTACTO*/
+
+#login{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+#login .informacion{
+    width: 35%;
+    height: 100%;
+    min-height: 100vh;
+    padding: 0px 40px;
+    display: flex;
+    flex-flow: column wrap;
+    color: #333;
+}
+#login .informacion img{
+    height: 30px;
+    margin-top: 20px;
+}
+#login .informacion #logo{
+    height: 100px;
+    align-self: center;
+    margin-top: 20px;
+}
+#login .informacion h2{
+    font-size: 28px;
+    align-self: center;
+    margin-bottom: 30px;
+}
+#login .informacion #loginform{
+    display: flex;
+    flex-flow: column wrap;
+}
+#loginform label{
+    font-size: 12px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+#loginform input{
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+span#aceptar{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+}
+input#checkbox{
+    width: 10%;
+    height: 100%;
+}
+#aceptar p{
+    font-size: 12px;
+    padding-left: 20px;
+    width: 90%;
+}
+#loginform div{
+    margin: 20px 0px 40px 0px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+}
+#loginform div button{
+    color: white;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 32px;
+    border: 0px;
+    border-radius: 19px;
+    background-color: gray;
+}
+#loginform div button:hover{
+    background-color: rgb(95, 94, 94);
+}
+#terminos{
+    color: #7a7a7a;
+    font-size: 10px;
+}
+.imagen{
+    height: 100%;
+    width: 65%;
+    background-image: url(../img/imgcontact/fondo1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.imagen button{
+    font-family: inherit;
+    font-weight: 900;
+    font-size: 15px;
+    background-color: white;
+    color: gray;
+    padding: 10px 35px;
+    border-radius: 20px;
+    border: 0px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+.imagen button:hover{
+    background-color: rgba(70, 130, 180, .6);
+    color: white;
+}
+
+/* FIN DE PAGINA DE CONTACTO */
+
+/* RESPONSIVE DESIGN */
+
+@media all and (max-width:1025px){ /* LAPTOP-IPAD */
+    .logo{
+        font-size: 13px;
+    }
+    .llamada-accion div {
+        width: 100%;
+    }
+    .llamada-accion div h1{
+        font-size: 35px;
+    }
+    .llamada-accion div p{
+        font-size: 20px;
+        max-width: 500px;
+    }
+    .fotos2{
+        display: none;
+    }
+    .fotos1{
+        width: 83%;
+    }
+    .fotos1 #laptop{
+        display: none;
+    }
+    .fotos1 img{
+        height: calc(100%/3);
+    }
+    footer{
+        font-size: 12px;
+    }
+    #login .informacion{
+        width: 40%;
+    }
+    .imagen{
+        width: 60%;
+    }
+}
+@media all and (max-width:769px){ /* TABLET */
+    .logo{
+        width: 30%;
+        justify-content: center;
+    }
+    .div.menu{
+        justify-content: space-evenly;
+        max-width: 0;
+        width: 70%;
+    }
+    .cuenta > #contactar{
+        display: none;
+    }
+    .sobremi .informacion p:nth-last-child(2){
+        line-height: 30px;
+        color: #fdfffc;
+        background-color: rgba(87, 26, 26, 0.4);
+        padding: 5px 0px;
+    }
+    .sobremi .informacion h3{
+        font-size: 20px;
+    }
+    .fotos1 #tablet{
+        display: none;
+    }
+    .fotos1 img{
+        width: calc(100%/4);
+    }
+    .servicios .cajas{
+        height: 60%;
+    }
+    #login .informacion{
+        width: 50%;
+    }
+    .imagen{
+        width: 50%;
+        background-position: center;
+        background-size: cover;
+        background-image: url(../img/imgcontact/fondo2.jpg);  
+    }
+}
+@media all and (max-width:426px){ /* MOVIL + */
+    header{
+        position: static;
+        background-color: rgba(0, 0, 0, 1);
+    }
+    .logo{
+        width: 100%;
+        font-size: 15px;
+    }
+    div.menu{
+        display: none;
+    }
+    .banner{
+        height: 90vh;
+        background-image: url(../img/banner2.jpg);
+    }
+    .sobremi .informacion{
+        width: 100%;
+        background-color: rgba(0, 0, 0, .5);
+    }
+    .sobremi .informacion h2{
+        font-size: 32px;
+        color: #bfbfbf;
+        border-top: 2px solid #bfbfbf;
+        border-bottom: 2px solid #bfbfbf;
+    }
+    .sobremi .informacion h4{
+        max-width: 250px;
+        color: #ddd;
+    }
+    .sobremi .informacion p:nth-last-child(2){
+        line-height: 30px;
+        color: #ddd;
+        background-color: transparent;
+    }
+    .titulo h2{
+        font-size: 42px;
+    }
+    .fotos1 #movil{
+        display: none;
+    }
+    .fotos1 img{
+        width: calc(100%/2);
+    }
+    #sobremi, #servicio{
+        display: none;
+    }    
+    .servicios{
+        height: min-content;
+    }
+    #info h2{
+        font-size: 28px;
+        margin: 30px 0px;
+        word-spacing: 5px;
+        text-align: center;
+    }
+    .cajas .caja{
+        width: 80%;
+        height: 400px;
+        margin-bottom: 20px;
+    }
+    .cajas .caja:hover{
+        transform: translateY(0px) scale3d(103%, 103%, 100%);
+    }
+    section.sectestimonios{
+        height: min-content;
+        background-color: #273234;
+        background-position: center;
+        background-size: cover;
+        background-image: none;
+    }
+    .sectestimonios .satisfechos{
+        font-size: 20px;
+        max-width: 300px;
+        margin: 30px 0px;
+        color: #fdfffc;
+    }
+    .testimonio{
+        width: 100%;
+        max-width: 90%;
+        margin: auto;
+        margin-bottom: 30px;
+        background-color: rgba(241, 239, 236, 0.9);
+        padding: 20px 20px;
+    }
+    .testimonio p{
+        max-width: 350px;
+    }
+    footer{
+        height: 250px;
+    }
+    .center-footer{
+        padding: 0px 0px 20px;
+        height: 200px;
+    }
+    .center-footer .redes{
+        width: 100%;
+        height: 130px;
+    }
+    .center-footer > .contacto{
+        display: initial;
+        height: 50px;
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .contacto > .contactame{
+        width: 100%;
+    }
+    .contacto > .animacion, .contactame p{
+        display: none;
+    }
+    .bottom-footer{
+        font-size: 8px;
+        height: 50px;
+    }
+    #login .informacion{
+        width: 100%;
+        min-height: 100vh;
+        background-image: linear-gradient(90deg, #ffffff 0%, #ddd 100%);
+    }
+    #login .imagen{
+        display: none;
+    }
+}
+@media all and (max-width:321px){ /* MOVIL - */
+    #aceptar p{
+        font-size: 11px;
+    }
+    .bottom-footer{
+        font-size: 7px;
+    }
+}
+
+/* Height */
+
+@media all and (max-height:769px){ /* TABLET */
+    #terminos{
+        display: none;
+    }
+    #loginform div{
+        margin: 20px 0px 0px 0px;
+    }
+}
+@media all and (max-height:668px){ /* IPHONE 6/7/8 */
+    #login .informacion #logo{
+        margin-top: 0px;
+        height: 70px;
+    }
+    #login .informacion h2{
+        margin-bottom: 10px;
+    }
+    #loginform div{
+        margin: 10px 0px 0px 0px;
+    }
+}
+@media all and (max-height:568px){ /* IPHONE 5/SE */
+    #login .informacion #logo{
+        display: none;
+    }
+}
+
+/* PARA DISPOSITIVOS HECHADOS */
+
+#landscape{
+    display: none;
+    z-index: -50;
+    color: #fdfffc;
+    font-size:120%;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 40px 40px 0px;
+    background-image: url(../img/adicional/fondogirar.jpg);
+    background-size: cover;
+    background-position: right;
+}
+#landscape img{
+    height: 150px;
+}   
+@media(max-width: 1030px) and (orientation: landscape){
+    #landscape {
+        display: flex;
+        position: fixed;
+        align-items: flex-end;
+        justify-content: flex-end;
+        top: 0;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        z-index: 7000;
+        width: 100%;
+        height: 100vh;
+    }
+    #login .informacion{
+        display: none;
+    }
+}    
+
+/* Animacion */
+
+.fadeInDown { 
+    animation-name: fadeInDown;
+    animation-duration: 2s;
+}
+@keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translate3d(-30%, 0%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+}
+/* Fin de animacion */
